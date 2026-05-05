@@ -17,3 +17,24 @@
 - Tree Shaking algorithm - removes unused code for us
 - Different Dev and Produ bundles
 
+#Namaste Food
+/**
+*Header
+    -Logo
+    -Navigation
+
+*Body
+    -Search
+    -Restaurant container
+    -RestaurantCard
+        -Img
+        -Name, Cuisines, Rating, Delivery.
+
+*Footer
+    -Copyright
+    -Links
+    -Address
+    -Contact
+*/
+
+  
