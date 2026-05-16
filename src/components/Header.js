@@ -1,4 +1,9 @@
+import { useEffect, useState } from "react";
+
 const Header = () => {
+
+      const [loginbtn, setLoginbtn] = useState("Login");  
+    
     return (
     <div className="header">
         <div className="logo-container"> 
@@ -13,6 +18,10 @@ const Header = () => {
                 <li>About</li>
                 <li><img className="cart" src="https://img.freepik.com/premium-vector/fast-food-cart-logo-template_692461-78.jpg?w=1060" /></li>
                  {/* <li>Cart</li> */}
+                 <button className="login" onClick={() => {
+                    loginbtn === "Login" ?
+                    setLoginbtn("Logout") : setLoginbtn("Login");
+                 }}>{loginbtn}</button>
             </ul>
         </div>
 

@@ -40,6 +40,7 @@ list-style: none;
     padding: 5px;
     width: 200px;
     background-color: lightgray;
+    margin :10 px;
     
     
 }
@@ -63,4 +64,21 @@ margin-left: 20px;
 .res-container{
 display: flex;
 flex-wrap: wrap;
+}
+
+.shimmer-container{
+display: flex;
+flex-wrap: wrap;
+}
+
+.shimmer-container{
+      padding: 5px;
+    width: 200px;
+    background-color: lightgray;
+    margin :10 px;
+}
+
+.login-btn{
+    padding: 0px 20px;
+    cursor:pointer;
 }
