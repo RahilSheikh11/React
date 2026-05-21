@@ -59,11 +59,16 @@ margin-left: 20px;
 .search:hover{
     cursor: zoom-in;
     border: 1px black solid;
+    border-radius: 11px;
+    cursor: pointer;
 }
 
 .res-container{
 display: flex;
 flex-wrap: wrap;
+justify-content: center;
+gap : 20px;
+padding: 0 15px;
 }
 
 .shimmer-container{
@@ -81,4 +86,9 @@ flex-wrap: wrap;
 .login-btn{
     padding: 0px 20px;
     cursor:pointer;
+    background-color: orange;
+    padding: 7px 15px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
 }

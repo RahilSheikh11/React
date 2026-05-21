@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -13,9 +14,9 @@ const Header = () => {
                     </div>
         <div className="nav-items">
             <ul>
-                <li>Home</li>
-                <li>Contact us</li>
-                <li>About</li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/contact">Contact us</Link></li>
+                <li><Link to="/about">About</Link></li>
                 <li><img className="cart" src="https://img.freepik.com/premium-vector/fast-food-cart-logo-template_692461-78.jpg?w=1060" /></li>
                  {/* <li>Cart</li> */}
                  <button className="login" onClick={() => {

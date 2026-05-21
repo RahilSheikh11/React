@@ -1,24 +1,3 @@
- {/* <RestaurantCard /> */}
-                {/* <RestaurantCard 
-                resName="KFC"
-                resCuisine= " Fried Chicken, Burgers, Nuggets, Beverages"
-                resRating="0.0"
-                resDeliveryTime = "38 minutes"
-                /> */}
-                {/* <RestaurantCard
-                resData={resList[0]}
-                />
-                <RestaurantCard
-                resData={resList[1]}
-                />
-                <RestaurantCard
-                resData={resList[2]}
-                />
-                <RestaurantCard
-                resData={resList[3]}
-                />
-            */}
-
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockdata";
 import { useEffect, useState } from "react";
@@ -28,19 +7,18 @@ const Body = () =>
 {
     const [list, setlist] = useState([]);
     const [searchBar, setSearchBar] = useState("");
+    const [filteredList, setFilteredList] = useState([]);
 
     useEffect(() => {fetchData(); }, []);
 
     const fetchData = async () =>{
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.324692&lng=73.1891052&collection=83631&tags=layout_CCS_Pizza&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
+    const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.32540414916516&lng=73.19742668420076&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
-        console.log(json);
+       
   
-
-      
-    setlist(json?.data?.cards[3]?.card?.card?.info);
-
-
+    setlist(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+       
     };
 
 
@@ -57,27 +35,29 @@ const Body = () =>
     return list.length === 0 ? <Shimmer /> :(
         <div className="body">
             <div className="Filter">
+
                 <input type="text" className="search-bar" value={searchBar}  onChange = {(e) => setSearchBar(e.target.value)}/>
                 <button className="search-bar-btn" 
                 onClick={() =>{
-                    const filteredList = list?.filter((res) => res.card.card.info.name.toLowerCase().includes(searchBar.toLowerCase()));
-                    setlist(filteredList);
+                    const filteredList = list?.filter((res) => res.info.name.toLowerCase().includes(searchBar.toLowerCase()));
+                    setFilteredList(filteredList);
                 }}>Search</button>
 
                 <button className="filter-btn"
-                onMouseOver ={()=>{
-                    const toprated = list?.filter((res)=> res.card.card.info.avgRating > 4);
-                    setlist(toprated);
+                onClick ={()=>{
+                    const toprated = list?.filter((res)=> res.info.avgRating > 4.0 );
+                    setFilteredList(toprated);
+                    console.log(toprated);
                 }}
                 
                 >
-                Most Rated Restaurants
+                Top Rated Restaurants
                 </button>
             </div>
 
             <div className="res-container">
                
-        {list.map((restaurant) =>( <RestaurantCard key = {restaurant.card.card.info.id} resData={restaurant} />))}
+        {filteredList.map((restaurant) =>( <RestaurantCard key = {restaurant.info?.id} resData={restaurant} />))}
   
    </div>
         </div>  );

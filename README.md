@@ -1,4 +1,5 @@
 #Parcel
+
 - Dev Build
 - Local Server
 - HMR = Hot module replacement
@@ -6,7 +7,7 @@
 - Caching - Faster builds
 - Image optimization
 - Minification of files
-- Bundles 
+- Bundles
 - Compresses the files
 - Consistent Hashing (Read about it)
 - Code spilitting
@@ -18,23 +19,33 @@
 - Different Dev and Produ bundles
 
 #Namaste Food
-/**
-*Header
-    -Logo
-    -Navigation
+/\*\*
+\*Header
+-Logo
+-Navigation
 
-*Body
-    -Search
-    -Restaurant container
-    -RestaurantCard
-        -Img
-        -Name, Cuisines, Rating, Delivery.
+\*Body
+-Search
+-Restaurant container
+-RestaurantCard
+-Img
+-Name, Cuisines, Rating, Delivery.
 
-*Footer
-    -Copyright
-    -Links
-    -Address
-    -Contact
-*/
+_Footer
+-Copyright
+-Links
+-Address
+-Contact
+_/
 
-  
+# React
+
+(Normal JS utility functions)
+
+- useState() - Superpowerful State variables in React
+- useEffect()
+
+# 2 Types of Routing
+
+- Client side routing
+- Server side routing
