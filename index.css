@@ -92,3 +92,7 @@ flex-wrap: wrap;
     outline: 0;
     border-radius: 5px;
 }
+.usercard{
+    padding: 10px;
+    border: 1px solid black;
+}
