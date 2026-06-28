@@ -4,13 +4,15 @@ import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom"; 
 import useOnlineStatus from "./../utils/useOnlineStatus";
-import Userontext from "../utils/UserContext";
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Body = () =>
 {
     const [list, setlist] = useState([]);
     const [searchBar, setSearchBar] = useState("");
     const [filteredList, setFilteredList] = useState([]);
+    const cartItems = useSelector((store) => store.cart.items);
     const Promoted = withPromoted(RestaurantCard);
     useEffect(() => {fetchData(); }, []);
     const onlineStatus = useOnlineStatus();

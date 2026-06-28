@@ -49,3 +49,32 @@ _/
 
 - Client side routing
 - Server side routing
+
+# Redux Toolkit
+
+- Install @reduxjs/Toolkit and React-Redux
+- Build our Store
+- Connect our store to our App
+- Create a Cart Slice(cartSlice)
+- Dispatch (Action)
+- Selector
+
+# Types of testing (Developer)
+
+- Unit Testing
+- Integration Testing
+- End to End Testing - e2e testing
+
+# Setting up Testing in our App
+
+- Installed React Testing Library
+- Installed Jest
+- Installed Babel Dependencies
+- Configured Babel
+- Configured Babel Config file to disable default babel transpilation
+- Jest configuration
+- Jest Configured Jest file
+- Install JSDOM library
+- Install @babel/preset-react - to make JSX work in test cases
+- Include @babel/preset-react inside my babel configuration
+- Install @testing-library/jest-dom
