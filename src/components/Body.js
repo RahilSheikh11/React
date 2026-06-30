@@ -42,7 +42,7 @@ const Body = () =>
         <div className="body">
             <div className="Filter">
             <div className="search p-4 m-4 border-b-black shadow-lime-50">
-                <input type="text" className="search-bar border-2" value={searchBar}  onChange = {(e) => setSearchBar(e.target.value)}/>
+                <input type="text" data-testid= "search-input" className="search-bar border-2" value={searchBar}  onChange = {(e) => setSearchBar(e.target.value)}/>
                 <button className="px-4 py-1.5 bg-orange-200 m-4 rounded-2xl" 
                 onClick={() =>{
                     const filteredList = list?.filter((res) => res.info.name.toLowerCase().includes(searchBar.toLowerCase()));
